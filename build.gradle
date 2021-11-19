@@ -1,5 +1,11 @@
+//plugins {
+//	id 'org.springframework.boot' version '2.6.0'
+//	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+//	id 'java'
+//}
+
 plugins {
-	id 'org.springframework.boot' version '2.6.0'
+	id 'org.springframework.boot' version '2.5.6'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -20,12 +26,23 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+jar {
+	manifest {
+		attributes 'Main-class': 'com.example.springxercice_p1s1of3.SpringxerciceP1s1of3Application'
+	}
+}
+
+
 test {
 	useJUnitPlatform()
 }
+
+
+
